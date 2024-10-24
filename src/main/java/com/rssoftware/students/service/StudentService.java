@@ -50,9 +50,8 @@ public class StudentService {
             if (changes.getCity() != null) address.setCity(changes.getCity());
             if (changes.getState() != null) address.setState(changes.getState());
             if (changes.getPin() != null) address.setPin(changes.getPin());
-            addressRepository.save(address);
         }
-        return studentRepository.save(student);
+        return saveStudent(student);
     }
 
     public void deleteStudentById(int id) {
