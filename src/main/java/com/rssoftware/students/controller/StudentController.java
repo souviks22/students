@@ -10,13 +10,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/students")
 public class StudentController {
     @Autowired
     private StudentService studentService;
 
     @GetMapping
-    public ResponseEntity<List<Student>> getStudents(@RequestParam(required = false) int pageSize, @RequestParam(required = false) int pageOffset) {
+    public ResponseEntity<List<Student>> getStudents(@RequestParam(required = false) Integer pageSize, @RequestParam(required = false) Integer pageOffset) {
+        if (pageSize == null) pageSize = 10;
+        if (pageOffset == null) pageOffset = 1;
         List<Student> students = studentService.getStudents(pageSize, pageOffset);
         if (students == null) return ResponseEntity.noContent().build();
         return ResponseEntity.ok(students);

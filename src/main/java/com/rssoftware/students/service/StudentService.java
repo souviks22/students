@@ -21,10 +21,8 @@ public class StudentService {
 
     public List<Student> getStudents(int pageSize, int pageOffset) {
         if (pageSize <= 0 || pageOffset <= 0) return null;
-        List<Student> students = studentRepository.findAll();
-        int start = pageSize * (pageOffset - 1), end = pageSize * pageOffset;
-        if (start >= students.size()) return null;
-        return students.subList(start, Math.min(end, students.size()));
+        int skip = pageSize * (pageOffset - 1);
+        return studentRepository.getPaginatedStudents(pageSize,skip);
     }
 
     public Student getStudentById(int id) {
