@@ -17,10 +17,22 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping
-    public ResponseEntity<List<Student>> getStudents(@RequestParam(required = false) Integer pageSize, @RequestParam(required = false) Integer pageOffset) {
-        if (pageSize == null) pageSize = 10;
+    public ResponseEntity<List<Student>> getStudents(@RequestParam(required = false) Integer pageSize, @RequestParam(required = false) Integer pageOffset,
+                                                     @RequestParam(required = false) String name, @RequestParam(required = false) Integer ageUp, @RequestParam(required = false) Integer ageDown,
+                                                     @RequestParam(required = false) Integer standardUp, @RequestParam(required = false) Integer standardDown, @RequestParam(required = false) String street,
+                                                     @RequestParam(required = false) String city, @RequestParam(required = false) String state, @RequestParam(required = false) Integer pin) {
+        if (pageSize == null) pageSize = 5;
         if (pageOffset == null) pageOffset = 1;
-        List<Student> students = studentService.getStudents(pageSize, pageOffset);
+        String namePattern = name == null ? "%" : "%" + name + "%";
+        String streetPattern = street == null ? "%" : "%" + street + "%";
+        String cityPattern = city == null ? "%" : "%" + city + "%";
+        String statePattern = state == null ? "%" : "%" + state + "%";
+        String pinPattern = pin == null ? "%" : "%" + pin + "%";
+        Integer greaterThanAge = ageUp == null ? 0 : ageUp;
+        Integer lessThanAge = ageDown == null ? 999 : ageDown;
+        Integer greaterThanStandard = standardUp == null ? 0 : standardUp;
+        Integer lessThanStandard = standardDown == null ? 999 : standardDown;
+        List<Student> students = studentService.getStudents(pageSize, pageOffset, namePattern, greaterThanAge, lessThanAge, greaterThanStandard, lessThanStandard, streetPattern, cityPattern, statePattern, pinPattern);
         if (students == null) return ResponseEntity.noContent().build();
         return ResponseEntity.ok(students);
     }

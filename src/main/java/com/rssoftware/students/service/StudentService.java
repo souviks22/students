@@ -19,10 +19,10 @@ public class StudentService {
     @Autowired
     private AddressRepository addressRepository;
 
-    public List<Student> getStudents(int pageSize, int pageOffset) {
+    public List<Student> getStudents(int pageSize, int pageOffset, String name, Integer ageUp, Integer ageDown, Integer standardUp, Integer standardDown, String street, String city, String state, String pin) {
         if (pageSize <= 0 || pageOffset <= 0) return null;
         int skip = pageSize * (pageOffset - 1);
-        return studentRepository.getPaginatedStudents(pageSize,skip);
+        return studentRepository.getPaginatedStudentsByFilter(pageSize, skip, name, ageUp, ageDown, standardUp, standardDown, street, city, state, pin);
     }
 
     public Student getStudentById(int id) {
