@@ -1,129 +1,172 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
-              name="StudentReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12345678-1234-1234-1234-123456789abc">
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="students" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e7eebaa4-068b-407f-bf7a-d4c2e72a1292">
+    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+    <style name="Title" fontName="Arial" fontSize="26.0" bold="true"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18.0"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12.0" bold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12.0"/>
 
-    <field name="id" class="java.lang.Integer"/>
-    <field name="name" class="java.lang.String"/>
-    <field name="age" class="java.lang.Integer"/>
-    <field name="standard" class="java.lang.Integer"/>
-    <field name="street" class="java.lang.String"/>
-    <field name="city" class="java.lang.String"/>
-    <field name="state" class="java.lang.String"/>
-    <field name="pin" class="java.lang.Integer"/>
-
-    <title>
-        <band height="50">
-            <textField>
-                <reportElement x="0" y="0" width="555" height="30"/>
-                <textElement>
-                    <font size="18" isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA["Student Report"]]></textFieldExpression>
-            </textField>
-        </band>
+    <field name="id" class="java.lang.Integer">
+        <property name="com.jaspersoft.studio.field.name" value="id"/>
+        <property name="com.jaspersoft.studio.field.label" value="id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+    </field>
+    <field name="name" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="name"/>
+        <property name="com.jaspersoft.studio.field.label" value="name"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+    </field>
+    <field name="age" class="java.lang.Integer">
+        <property name="com.jaspersoft.studio.field.name" value="age"/>
+        <property name="com.jaspersoft.studio.field.label" value="age"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+    </field>
+    <field name="standard" class="java.lang.Integer">
+        <property name="com.jaspersoft.studio.field.name" value="standard"/>
+        <property name="com.jaspersoft.studio.field.label" value="standard"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+    </field>
+    <field name="street" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="street"/>
+        <property name="com.jaspersoft.studio.field.label" value="street"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="address"/>
+    </field>
+    <field name="city" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="city"/>
+        <property name="com.jaspersoft.studio.field.label" value="city"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="address"/>
+    </field>
+    <field name="state" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="state"/>
+        <property name="com.jaspersoft.studio.field.label" value="state"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="address"/>
+    </field>
+    <field name="pin" class="java.lang.Integer">
+        <property name="com.jaspersoft.studio.field.name" value="pin"/>
+        <property name="com.jaspersoft.studio.field.label" value="pin"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="address"/>
+    </field>
+    <group name="Group1">
+        <expression><![CDATA[$F{id}]]></expression>
+        <groupHeader>
+            <band height="26">
+                <element kind="textField" uuid="62aa69c1-2611-45a6-84c4-4f7d570ec093" x="50" y="2" width="144" height="20" fontSize="11.0" bold="true" style="SubTitle">
+                    <expression><![CDATA[$F{name}]]></expression>
+                </element>
+                <element kind="textField" uuid="53b06611-b6d2-4c3c-a10e-2b349a2d73d3" x="6" y="3" width="55" height="22" forecolor="#006600" fontSize="11.0" bold="true" style="SubTitle">
+                    <expression><![CDATA[$F{id}]]></expression>
+                </element>
+                <element kind="textField" uuid="36d9e105-e16f-45a0-b966-ad7015128959" x="151" y="2" width="50" height="20" fontSize="11.0" bold="true" style="SubTitle">
+                    <expression><![CDATA[$F{age}]]></expression>
+                </element>
+                <element kind="textField" uuid="9743bc56-18a7-48d1-ad7f-95a3a2d9b8c0" x="199" y="2" width="70" height="20" fontSize="11.0" bold="true" style="SubTitle">
+                    <expression><![CDATA[$F{standard}]]></expression>
+                </element>
+                <element kind="textField" uuid="97c01332-6d3f-4465-9002-2586d4d6d6ca" x="262" y="3" width="170" height="20" fontSize="11.0" bold="true" style="SubTitle">
+                    <expression><![CDATA[$F{street}]]></expression>
+                </element>
+                <element kind="textField" uuid="320f599d-470a-447a-a839-c54860008a40" x="384" y="2" width="100" height="20" fontSize="11.0" bold="true" style="SubTitle">
+                    <expression><![CDATA[$F{city}]]></expression>
+                </element>
+                <element kind="textField" uuid="09d1cd2c-fe23-4d33-9d2d-9966ff4175fe" x="440" y="3" width="121" height="20" fontSize="11.0" bold="true" style="SubTitle">
+                    <expression><![CDATA[$F{state}]]></expression>
+                </element>
+                <element kind="textField" uuid="a0abe3ac-84d6-4be6-a66a-8a0dad8b9eee" x="519" y="2" width="70" height="20" fontSize="11.0" bold="true" style="SubTitle">
+                    <expression><![CDATA[$F{pin}]]></expression>
+                </element>
+                <element kind="line" uuid="f367c019-9cb7-431c-8713-5a96f9b889aa" positionType="FixRelativeToBottom" x="0" y="23" width="555" height="1">
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </element>
+            </band>
+        </groupHeader>
+        <groupFooter>
+            <band/>
+        </groupFooter>
+    </group>
+    <group name="Group2">
+        <expression><![CDATA[$F{name}]]></expression>
+        <groupHeader>
+            <band height="1"/>
+        </groupHeader>
+    </group>
+    <group name="age">
+        <expression><![CDATA[$F{age}]]></expression>
+    </group>
+    <group name="standard">
+        <expression><![CDATA[$F{standard}]]></expression>
+    </group>
+    <group name="street">
+        <expression><![CDATA[$F{street}]]></expression>
+    </group>
+    <group name="city">
+        <expression><![CDATA[$F{city}]]></expression>
+    </group>
+    <group name="state">
+        <expression><![CDATA[$F{state}]]></expression>
+    </group>
+    <group name="pin">
+        <expression><![CDATA[$F{pin}]]></expression>
+    </group>
+    <background splitType="Stretch"/>
+    <title height="89" splitType="Stretch">
+        <element kind="staticText" uuid="3eb8e1ab-7e38-4368-89db-62b6501a8c67" x="0" y="13" width="263" height="33" vTextAlign="Middle" style="Title">
+            <text><![CDATA[Students]]></text>
+        </element>
+        <element kind="staticText" uuid="0b5308cc-82cf-49a0-8011-6f875d4c5e32" x="100" y="46" width="174" height="22" style="SubTitle">
+            <text><![CDATA[By Filter]]></text>
+        </element>
+        <element kind="image" uuid="3ed3896e-b614-42e1-bd01-18e8411d9465" x="274" y="2" width="301" height="66">
+            <expression><![CDATA["classpath:reports/rs-software.png"]]></expression>
+        </element>
     </title>
-
-    <columnHeader>
-        <band height="20">
-            <staticText>
-                <reportElement x="0" y="0" width="50" height="20"/>
-                <textElement>
-                    <font isBold="true"/>
-                </textElement>
-                <text><![CDATA[ID]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="50" y="0" width="100" height="20"/>
-                <textElement>
-                    <font isBold="true"/>
-                </textElement>
-                <text><![CDATA[Name]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="150" y="0" width="50" height="20"/>
-                <textElement>
-                    <font isBold="true"/>
-                </textElement>
-                <text><![CDATA[Age]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="200" y="0" width="100" height="20"/>
-                <textElement>
-                    <font isBold="true"/>
-                </textElement>
-                <text><![CDATA[Standard]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="300" y="0" width="100" height="20"/>
-                <textElement>
-                    <font isBold="true"/>
-                </textElement>
-                <text><![CDATA[Street]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="400" y="0" width="100" height="20"/>
-                <textElement>
-                    <font isBold="true"/>
-                </textElement>
-                <text><![CDATA[City]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="500" y="0" width="100" height="20"/>
-                <textElement>
-                    <font isBold="true"/>
-                </textElement>
-                <text><![CDATA[State]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="600" y="0" width="100" height="20"/>
-                <textElement>
-                    <font isBold="true"/>
-                </textElement>
-                <text><![CDATA[Pin]]></text>
-            </staticText>
-        </band>
+    <pageHeader splitType="Stretch"/>
+    <columnHeader height="36" splitType="Stretch">
+        <element kind="line" uuid="d69c6691-e92e-45c5-bf2d-c1dc15dabb91" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1">
+            <pen lineWidth="0.5" lineColor="#999999"/>
+        </element>
+        <element kind="staticText" uuid="37d32f7f-cb08-4f99-8859-12467f8c0b28" x="6" y="8" width="30" height="21" fontSize="16.0">
+            <text><![CDATA[ID]]></text>
+        </element>
+        <element kind="staticText" uuid="c3293707-48df-4c38-a7b0-eb698bc3d7ce" x="60" y="8" width="50" height="21" fontSize="16.0">
+            <text><![CDATA[Name]]></text>
+        </element>
+        <element kind="staticText" uuid="59109afd-5ea2-4c54-9ef7-fff6d3d4a141" x="137" y="8" width="40" height="21" fontSize="16.0">
+            <text><![CDATA[Age]]></text>
+        </element>
+        <element kind="staticText" uuid="4628ec73-1186-417c-8d24-fc6b24f14ef4" x="190" y="8" width="70" height="21" fontSize="16.0">
+            <text><![CDATA[Standard]]></text>
+        </element>
+        <element kind="staticText" uuid="3c391d5c-38d3-4cb5-961c-d60019d698be" x="280" y="8" width="50" height="21" fontSize="16.0">
+            <text><![CDATA[Street]]></text>
+        </element>
+        <element kind="staticText" uuid="f8f5bc9a-2a14-4e21-a818-81b5063d7122" x="383" y="8" width="50" height="21" fontSize="16.0">
+            <text><![CDATA[City]]></text>
+        </element>
+        <element kind="staticText" uuid="10710669-32bc-4f81-813a-c510eb8c3555" x="450" y="8" width="50" height="21" fontSize="16.0">
+            <text><![CDATA[State]]></text>
+        </element>
+        <element kind="staticText" uuid="ba10d46d-e4bb-4871-a174-df0d6c99425d" x="520" y="8" width="50" height="21" fontSize="16.0">
+            <text><![CDATA[Pin]]></text>
+        </element>
     </columnHeader>
-
     <detail>
-        <band height="20">
-            <textField>
-                <reportElement x="0" y="0" width="50" height="20"/>
-                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="50" y="0" width="100" height="20"/>
-                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="150" y="0" width="50" height="20"/>
-                <textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="200" y="0" width="100" height="20"/>
-                <textFieldExpression><![CDATA[$F{standard}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="300" y="0" width="100" height="20"/>
-                <textFieldExpression><![CDATA[$F{street}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="400" y="0" width="100" height="20"/>
-                <textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="500" y="0" width="100" height="20"/>
-                <textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="600" y="0" width="100" height="20"/>
-                <textFieldExpression><![CDATA[$F{pin}]]></textFieldExpression>
-            </textField>
-        </band>
+        <band splitType="Stretch"/>
     </detail>
-
-    <summary>
-        <band height="50"/>
-    </summary>
+    <columnFooter height="45" splitType="Stretch">
+        <element kind="line" uuid="02519f40-8679-4e40-a1f1-699bc025a206" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1">
+            <pen lineWidth="0.5" lineColor="#999999"/>
+        </element>
+    </columnFooter>
+    <pageFooter height="20" splitType="Stretch">
+        <element kind="textField" uuid="6f13e17d-4b46-4ede-ab63-9d2685ec9c16" x="433" y="0" width="80" height="20" fontSize="10.0" bold="false" hTextAlign="Right" style="Column header">
+            <expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+        </element>
+        <element kind="textField" uuid="6857db7e-824a-4cda-b8dc-fe5c95aca145" x="513" y="0" width="40" height="20" fontSize="10.0" evaluationTime="Report" bold="false" style="Column header">
+            <expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+        </element>
+        <element kind="textField" uuid="ef9fc35f-c45f-4ec6-a5cc-ec2020109ea7" x="0" y="0" width="197" height="20" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" style="Column header">
+            <expression><![CDATA[new java.util.Date()]]></expression>
+        </element>
+    </pageFooter>
+    <summary splitType="Stretch"/>
 </jasperReport>
