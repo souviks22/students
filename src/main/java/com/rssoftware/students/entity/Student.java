@@ -1,6 +1,5 @@
 package com.rssoftware.students.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Range;
 
